@@ -1,4 +1,5 @@
-const { shell } = require('electron');
+const { shell, remote } = require('electron');
+const systemPreferences = remote.systemPreferences;
 
 const newLinkUrl = document.querySelector('#new-link-url');
 const newLinkSubmit = document.querySelector('.new-link-form--submit');
@@ -47,4 +48,10 @@ newLinkForm.addEventListener('submit', () => {
     .then(addToPage)
     .then((title) => console.log(title))
     .catch((error) => console.error(error));
+});
+
+window.addEventListener('load', () => {
+  if (systemPreferences.isDarkMode()) {
+    document.querySelector('link').href = 'styles-dark.css';
+  }
 });
