@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/stevekinney/fem-bookmarker#readme",
   "dependencies": {
+    "devtron": "^1.4.0",
     "electron": "^1.4.6"
   },
   "devDependencies": {
